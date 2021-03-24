@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:food_joint/pages/favourite.dart';
+import 'package:food_joint/pages/profile.dart';
 import './foodcategory.dart';
 import './search.dart';
 import './boughtfoods.dart';
 import 'data/fooddata.dart';
+import 'pages/order.dart';
+import 'pages/favourite.dart';
+import 'pages/profile.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -101,6 +106,10 @@ class MainSCreen extends StatefulWidget {
 class _MainSCreenState extends State<MainSCreen> {
   int currentIndex = 0;
   HomePage homePage;
+  Order orderPage;
+  FavouritePage favouritePage;
+  ProfilePage profilePage;
+
   List<Widget> pages;
   Widget currentPage;
 
@@ -109,7 +118,10 @@ class _MainSCreenState extends State<MainSCreen> {
     // TODO: implement initState
     super.initState();
     homePage = HomePage();
-    pages = [];
+    orderPage = Order();
+    favouritePage = FavouritePage();
+    profilePage = ProfilePage();
+    pages = [homePage, orderPage, favouritePage, profilePage];
     currentPage = homePage;
   }
 
